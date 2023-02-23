@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wedding_site/widgets/appbar_widget.dart';
+
+import '../widgets/center_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,73 +9,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const AppbarWidget(),
       body: Stack(
         children: [
-          SizedBox(
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/initials.png',
-                  width: 360,
-                ),
-                const Padding(padding: EdgeInsets.all(20.0)),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Text(
-                      'ANASTASIA',
-                      style: TextStyle(
-                          fontSize: 30.0, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      ' and ',
-                      style: TextStyle(fontSize: 30.0),
-                    ),
-                    Text(
-                      'DIMITRIS',
-                      style: TextStyle(
-                          fontSize: 30.0, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                const Text(
-                  'JULY 8, 2023',
-                  style: TextStyle(fontSize: 22.0),
-                ),
-                const Text(
-                  'KOMOTINI, GREECE',
-                  style: TextStyle(fontSize: 22.0),
-                ),
-                const Padding(padding: EdgeInsets.all(10.0)),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: const ButtonStyle(
-                    side: MaterialStatePropertyAll<BorderSide>(BorderSide.none),
-                    shape: MaterialStatePropertyAll<OutlinedBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
-                      ),
-                    ),
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.0,
-                      vertical: 5.0,
-                    ),
-                    child: Text(
-                      'RSVP',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const SizedBox(width: double.infinity, child: CenterWidget()),
           Center(
             child: Transform.translate(
               offset: const Offset(-50.0, -125.0),
